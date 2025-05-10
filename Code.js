@@ -6,4 +6,8 @@ function updateSnpData() {
 
   snpReturnsSheet.insertRowsBefore(7, numOfRows);
   snpReturnsSheet.getRange(7, 1, numOfRows, 5).setValues(newSnpData);
+
+  const copyToRange = snpReturnsSheet.getRange(7, 8, numOfRows, 1);
+
+  snpReturnsSheet.getRange(7 + numOfRows, 8, 1, 19).copyTo(copyToRange, SpreadsheetApp.CopyPasteType.PASTE_NORMAL, false);
 }
